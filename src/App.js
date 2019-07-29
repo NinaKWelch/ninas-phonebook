@@ -59,7 +59,8 @@ const App = () => {
         setPersons(persons.concat(returnedPerson))
       })
       .catch(error => {
-        showMessage(`Attempt failed`, 'red')
+        let message = error.response.data
+        showMessage(message.error, 'red')
       }) 
     }
     
